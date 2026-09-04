@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vibe-ready-tools.blue-leaf-4589.chatgpt.site/sitemap.xml
