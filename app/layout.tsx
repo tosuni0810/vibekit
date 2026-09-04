@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { LanguageProvider } from "@/components/language-provider";
@@ -22,6 +23,13 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="antialiased">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-XR7SFC8D1Y" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XR7SFC8D1Y');
+        `}</Script>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", name: "VibeKit", description: "Free browser-based developer tools for vibe coding", inLanguage: ["ko", "en"] }) }} />
         <LanguageProvider>
           <SiteHeader />
