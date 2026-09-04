@@ -45,7 +45,7 @@ export function FaviconTool() {
   }
 
   useEffect(() => {
-    if (!source) return;
+    if (!source) { setPreview(""); return; }
     let active = true;
     loadImage(source).then((image) => {
       if (active) setPreview(drawSquare(image, 512, options).toDataURL("image/png"));
@@ -90,7 +90,7 @@ export function FaviconTool() {
     <section className="workbench two-col">
       <div className="panel editor-panel"><div className="panel-head"><span>01</span><div><h2>이미지와 모양</h2><p>모든 편집은 이 브라우저 안에서만 처리돼요.</p></div></div>
         {!source ? <UploadBox onFile={choose} /> : <>
-          <div className="file-row"><img src={preview} alt="업로드한 파비콘 미리보기" /><span><strong>{file?.name}</strong><small>{file ? `${(file.size / 1024).toFixed(0)} KB` : ""}</small></span><button onClick={() => { setSource(""); setFile(null); }}>교체</button></div>
+          <div className="file-row">{preview ? <img src={preview} alt="업로드한 파비콘 미리보기" /> : <span className="file-preview-placeholder" aria-hidden="true" />}<span><strong>{file?.name}</strong><small>{file ? `${(file.size / 1024).toFixed(0)} KB` : ""}</small></span><button onClick={() => { setSource(""); setFile(null); }}>교체</button></div>
           <div className="control-grid">
             <label>배경색<span><input type="color" value={background} disabled={transparent} onChange={(e) => setBackground(e.target.value)} /><code>{background}</code></span></label>
             <label className="switch-label">투명 배경<input type="checkbox" checked={transparent} onChange={(e) => setTransparent(e.target.checked)} /><i /></label>

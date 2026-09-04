@@ -149,6 +149,7 @@ legend { margin-bottom: 10px; font-size: .875rem; font-weight: 650; }
 .button-note { margin: 8px 0 0; text-align: center; color: #9297a0; font-size: .72rem; }
 .file-row { display: grid; grid-template-columns: 58px 1fr auto; gap: 12px; align-items: center; padding: 10px; margin-bottom: 18px; border: 1px solid var(--line); border-radius: 11px; }
 .file-row img { width: 58px; height: 58px; border-radius: 10px; object-fit: contain; background-image: conic-gradient(#eee 25%,#fff 0 50%,#eee 0 75%,#fff 0); background-size: 12px 12px; }
+.file-preview-placeholder { width: 58px; height: 58px; border-radius: 10px; background: var(--soft); }
 .file-row strong, .file-row small { display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .file-row strong { font-size: .82rem; }.file-row small { color: var(--muted); font-size: .72rem; }.file-row button { border: 0; background: transparent; color: var(--accent); font-size: .76rem; }
 .control-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
